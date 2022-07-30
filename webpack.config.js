@@ -19,7 +19,7 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png | svg | jpg | jpeg | gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset",
         parser: {
           dataUrlCondition: {
@@ -36,6 +36,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/views/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "login.html",
+      template: "./src/views/login.html",
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
