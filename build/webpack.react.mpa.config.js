@@ -8,8 +8,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.jsx",
-    login: "./src/login.js",
+    index: path.resolve(__dirname, "../src/mpa/home.jsx"),
+    // login: path.resolve(__dirname, "../src/mpa/login.jsx"),
   },
   output: {
     filename: "js/[name].js",
@@ -17,7 +17,6 @@ module.exports = {
   },
   devServer: {
     static: {
-      // directory: path.join(__dirname, "dist"),
       directory: path.join(__dirname, "public"),
     },
     compress: true,
@@ -55,14 +54,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "/public/index.html"),
+      template: path.resolve(__dirname, "../public/index.html"),
       chunks: ["index"],
     }),
-    new HtmlWebpackPlugin({
-      filename: "login.html",
-      template: "./src/views/login.html",
-      chunks: ["login"],
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: "login.html",
+    //   template: path.resolve(__dirname, "../public/index.html"),
+    //   chunks: ["login"],
+    // }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",

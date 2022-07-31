@@ -50,7 +50,7 @@ module.exports = {
     minimize: true,
     minimizer: [
       new UglifyJsPlugin({
-        sourceMap: true,
+        //sourceMap: true,
       }),
       new CssMiniPlugin(),
     ],
