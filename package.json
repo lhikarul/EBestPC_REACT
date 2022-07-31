@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server",
-    "dev:react": "webpack-dev-server --config webpack.react.config.js",
-    "build": "webpack",
-    "build:react": "webpack --config webpack.react.config.js"
+    "dev": "webpack-dev-server --config build/webpack.config.js",
+    "dev:react": "webpack-dev-server --config build/webpack.react.config.js",
+    "build": "webpack --config build/webpack.config.js",
+    "build:react": "webpack --config build/webpack.react.config.js"
   },
   "author": "",
   "license": "ISC",
