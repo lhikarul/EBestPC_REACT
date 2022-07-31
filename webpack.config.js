@@ -4,6 +4,8 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CssMiniPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -42,6 +44,26 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+      }),
+      new CssMiniPlugin(),
+    ],
+    splitChunks: {
+      minSize: 30 * 1024,
+      chunks: "all",
+      cacheGroups: {
+        jquery: {
+          name: "jquery",
+          test: /jquery/,
+          chunks: "all",
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
