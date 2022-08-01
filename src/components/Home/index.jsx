@@ -1,6 +1,6 @@
-import React from "react";
-import "../../index.js";
-function Home() {
+import "../../css/index.css";
+
+function Home(props) {
   return (
     <div>
       <div className="head">
