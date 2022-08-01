@@ -9,7 +9,7 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.jsx",
-    login: "./src/login.js",
+    // login: "./src/login.js",
   },
   output: {
     filename: "js/[name].js",
@@ -53,16 +53,16 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.resolve(__dirname, "/public/index.html"),
-      chunks: ["index"],
-    }),
-    new HtmlWebpackPlugin({
-      filename: "login.html",
-      template: "./src/views/login.html",
-      chunks: ["login"],
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: "index.html",
+    //   template: path.resolve(__dirname, "/public/index.html"),
+    //   chunks: ["index"],
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: "login.html",
+    //   template: "./src/views/login.html",
+    //   chunks: ["login"],
+    // }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
