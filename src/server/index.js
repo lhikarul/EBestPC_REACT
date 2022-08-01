@@ -3,20 +3,26 @@ import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { renderToString } from "react-dom/server";
 import Home from "../components/Home";
+import cssContext from "./cssContext";
 
 const app = express();
 app.use(express.static("dist"));
 
-const render = (req, context) => {
+const render = (req) => {
+  const staticContext = {
+    css: [],
+  };
   const content = renderToString(
-    <StaticRouter location={req.path}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </StaticRouter>
+    <cssContext.Provider value={staticContext}>
+      <StaticRouter location={req.path}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </StaticRouter>
+    </cssContext.Provider>
   );
 
-  const cssStr = context.css.length ? context.css.join("\n") : "";
+  const cssStr = staticContext.css.length ? staticContext.css.join("\n") : "";
 
   return `
         <html>
@@ -33,10 +39,7 @@ const render = (req, context) => {
 };
 
 app.get("/", (req, res) => {
-  const context = {
-    css: [],
-  };
-  const html = render(req, context);
+  const html = render(req);
   res.send(html);
 });
 

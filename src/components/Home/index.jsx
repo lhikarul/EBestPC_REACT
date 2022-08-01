@@ -1,6 +1,14 @@
-import "../../css/index.css";
+import cssContext from "../../server/cssContext";
+import globalStyles from "../../css/public.css";
+import styles from "../../css/index.css";
+import { useContext } from "react";
 
-function Home(props) {
+function Home() {
+  const context = useContext(cssContext);
+  if (typeof window === "undefined") {
+    // context.css.push(globalStyles._getCss());
+    // context.css.push(styles._getCss());
+  }
   return (
     <div>
       <div className="head">
