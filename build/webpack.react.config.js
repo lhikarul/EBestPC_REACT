@@ -17,8 +17,8 @@ module.exports = {
   },
   devServer: {
     static: {
-      // directory: path.join(__dirname, "dist"),
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "dist"),
+      // directory: path.join(__dirname, "public"),
     },
     compress: true,
     port: 9000,
@@ -55,7 +55,8 @@ module.exports = {
   plugins: [
     // new HtmlWebpackPlugin({
     //   filename: "index.html",
-    //   template: path.resolve(__dirname, "/public/index.html"),
+    //   // template: path.resolve(__dirname, "/public/index.html")
+    //   template: "./src/views/index.html",
     //   chunks: ["index"],
     // }),
     // new HtmlWebpackPlugin({

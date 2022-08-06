@@ -1,12 +1,14 @@
-import cssContext from "../../server/cssContext";
-import globalStyles from "../../css/public.css";
-import styles from "../../css/index.css";
 import { useContext } from "react";
+import cssContext from "../../server/cssContext";
+import "../../css/index.css";
+import "jquery";
+import "../../js/public.js";
+import "../../js/nav.js";
+import "../../js/home_slider.js";
 
 function Home() {
   const context = useContext(cssContext);
   if (typeof window === "undefined") {
-    // context.css.push(globalStyles._getCss());
     // context.css.push(styles._getCss());
   }
   return (
@@ -34,17 +36,17 @@ function Home() {
               </form>
               <div className="btn fl clearfix">
                 <a href="mygxin.html">
-                  <img src="img//grzx.png" />
+                  <img src="img/grzx.png" />
                 </a>
                 <a href="#" className="er1">
-                  <img src="img//ewm.png" />
+                  <img src="img/ewm.png" />
                 </a>
                 <a href="cart.html">
-                  <img src="img//gwc.png" />
+                  <img src="img/gwc.png" />
                 </a>
                 <p>
                   <a href="#">
-                    <img src="img//smewm.png" />
+                    <img src="img/smewm.png" />
                   </a>
                 </p>
               </div>
@@ -61,7 +63,7 @@ function Home() {
                   <a href="paint.html">
                     <dl>
                       <dt>
-                        <img src="img//nav1.jpg" />
+                        <img src="img/nav1.jpg" />
                       </dt>
                       <dd>浓情欧式</dd>
                     </dl>
@@ -69,7 +71,7 @@ function Home() {
                   <a href="paint.html">
                     <dl>
                       <dt>
-                        <img src="img//nav2.jpg" />
+                        <img src="img/nav2.jpg" />
                       </dt>
                       <dd>浪漫美式</dd>
                     </dl>
@@ -77,7 +79,7 @@ function Home() {
                   <a href="paint.html">
                     <dl>
                       <dt>
-                        <img src="img//nav3.jpg" />
+                        <img src="img/nav3.jpg" />
                       </dt>
                       <dd>雅致中式</dd>
                     </dl>
@@ -85,7 +87,7 @@ function Home() {
                   <a href="paint.html">
                     <dl>
                       <dt>
-                        <img src="img//nav6.jpg" />
+                        <img src="img/nav6.jpg" />
                       </dt>
                       <dd>简约现代</dd>
                     </dl>
@@ -93,7 +95,7 @@ function Home() {
                   <a href="paint.html">
                     <dl>
                       <dt>
-                        <img src="img//nav7.jpg" />
+                        <img src="img/nav7.jpg" />
                       </dt>
                       <dd>创意装饰</dd>
                     </dl>
@@ -137,12 +139,12 @@ function Home() {
           <ul className="slides">
             <li>
               <div className="slide">
-                <img src="img//banner2.jpg" />
+                <img src="img/banner2.jpg" />
               </div>
             </li>
             <li>
               <div className="slide">
-                <img src="img//banner1.jpg" />
+                <img src="img/banner1.jpg" />
               </div>
             </li>
           </ul>
@@ -152,13 +154,13 @@ function Home() {
       <div className="thImg">
         <div className="clearfix">
           <a href="vase_proList.html">
-            <img src="img//i1.jpg" />
+            <img src="img/i1.jpg" />
           </a>
           <a href="proList.html">
-            <img src="img//i2.jpg" />
+            <img src="img/i2.jpg" />
           </a>
           <a href="#2">
-            <img src="img//i3.jpg" />
+            <img src="img/i3.jpg" />
           </a>
         </div>
       </div>
@@ -166,45 +168,45 @@ function Home() {
       <div className="news">
         <div className="wrapper">
           <h2>
-            <img src="img//ih1.jpg" />
+            <img src="img/ih1.jpg" />
           </h2>
           <div className="top clearfix">
             <a href="proDetail.html">
-              <img src="img//n1.jpg" />
+              <img src="img/n1.jpg" />
               <p></p>
             </a>
             <a href="proDetail.html">
-              <img src="img//n2.jpg" />
+              <img src="img/n2.jpg" />
               <p></p>
             </a>
             <a href="proDetail.html">
-              <img src="img//n3.jpg" />
+              <img src="img/n3.jpg" />
               <p></p>
             </a>
           </div>
           <div className="bott clearfix">
             <a href="proDetail.html">
-              <img src="img//n4.jpg" />
+              <img src="img/n4.jpg" />
               <p></p>
             </a>
             <a href="proDetail.html">
-              <img src="img//n5.jpg" />
+              <img src="img/n5.jpg" />
               <p></p>
             </a>
             <a href="proDetail.html">
-              <img src="img//n6.jpg" />
+              <img src="img/n6.jpg" />
               <p></p>
             </a>
           </div>
           <h2>
-            <img src="img//ih2.jpg" />
+            <img src="img/ih2.jpg" />
           </h2>
           <div className="flower clearfix tran">
             <a href="proDetail.html" className="clearfix">
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo1.jpg" />
+                  <img src="img/flo1.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -217,7 +219,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo2.jpg" />
+                  <img src="img/flo2.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -230,7 +232,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo3.jpg" />
+                  <img src="img/flo3.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -245,7 +247,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo4.jpg" />
+                  <img src="img/flo4.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -258,7 +260,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo5.jpg" />
+                  <img src="img/flo5.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -271,7 +273,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//flo6.jpg" />
+                  <img src="img/flo6.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -285,20 +287,20 @@ function Home() {
       </div>
 
       <a href="#" className="ad">
-        <img src="img//ib1.jpg" />
+        <img src="img/ib1.jpg" />
       </a>
 
       <div className="people">
         <div className="wrapper">
           <h2>
-            <img src="img//ih3.jpg" />
+            <img src="img/ih3.jpg" />
           </h2>
           <div className="pList clearfix tran">
             <a href="proDetail.html">
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s7.jpg" />
+                  <img src="img/s7.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】不锈钢壁饰墙饰软装</dd>
@@ -311,7 +313,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s10.jpg" />
+                  <img src="img/s10.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -324,7 +326,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s4.jpg" />
+                  <img src="img/s4.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】玄关假山水壁饰背景墙饰挂件创意</dd>
@@ -337,7 +339,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s9.jpg" />
+                  <img src="img/s9.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】金属树枝壁饰铜鸟装饰品</dd>
@@ -352,7 +354,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s6.jpg" />
+                  <img src="img/s6.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】金属壁饰创意背景墙面挂件创意</dd>
@@ -365,7 +367,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s8.jpg" />
+                  <img src="img/s8.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -378,7 +380,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s12.jpg" />
+                  <img src="img/s12.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】欧式复古挂钟创意餐厅钟表家居挂件</dd>
@@ -391,7 +393,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s1.jpg" />
+                  <img src="img/s1.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】客厅地中海欧式现代相片墙创意</dd>
@@ -406,7 +408,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s5.jpg" />
+                  <img src="img/s5.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】铁艺荷叶壁挂软装背景墙上装饰品</dd>
@@ -419,7 +421,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s3.jpg" />
+                  <img src="img/s3.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】欧式照片墙 创意组合结婚礼物</dd>
@@ -432,7 +434,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s2.jpg" />
+                  <img src="img/s2.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】欧式钟表相框墙挂墙创意组合</dd>
@@ -445,7 +447,7 @@ function Home() {
               <dl>
                 <dt>
                   <span className="abl"></span>
-                  <img src="img//s11.jpg" />
+                  <img src="img/s11.jpg" />
                   <span className="abr"></span>
                 </dt>
                 <dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -462,7 +464,7 @@ function Home() {
         <a href="cart.html">
           <dl>
             <dt>
-              <img src="img//gt1.png" />
+              <img src="img/gt1.png" />
             </dt>
             <dd>
               去购
@@ -474,7 +476,7 @@ function Home() {
         <a href="#" className="dh">
           <dl>
             <dt>
-              <img src="img//gt2.png" />
+              <img src="img/gt2.png" />
             </dt>
             <dd>
               联系
@@ -486,7 +488,7 @@ function Home() {
         <a href="mygxin.html">
           <dl>
             <dt>
-              <img src="img//gt3.png" />
+              <img src="img/gt3.png" />
             </dt>
             <dd>
               个人
@@ -498,7 +500,7 @@ function Home() {
         <a href="#" className="toptop" style={{ display: "none" }}>
           <dl>
             <dt>
-              <img src="img//gt4.png" />
+              <img src="img/gt4.png" />
             </dt>
             <dd>
               返回
@@ -514,25 +516,25 @@ function Home() {
           <div className="wrapper">
             <div className="clearfix">
               <a href="#2" className="fl">
-                <img src="img//foot1.png" />
+                <img src="img/foot1.png" />
               </a>
               <span className="fl">7天无理由退货</span>
             </div>
             <div className="clearfix">
               <a href="#2" className="fl">
-                <img src="img//foot2.png" />
+                <img src="img/foot2.png" />
               </a>
               <span className="fl">15天免费换货</span>
             </div>
             <div className="clearfix">
               <a href="#2" className="fl">
-                <img src="img//foot3.png" />
+                <img src="img/foot3.png" />
               </a>
               <span className="fl">满599包邮</span>
             </div>
             <div className="clearfix">
               <a href="#2" className="fl">
-                <img src="img//foot4.png" />
+                <img src="img/foot4.png" />
               </a>
               <span className="fl">手机特色服务</span>
             </div>
