@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import cssContext from "../../server/cssContext";
 import "../../css/index.css";
-import "jquery";
-import "../../js/public.js";
-import "../../js/nav.js";
-import "../../js/home_slider.js";
+
+(async () => {
+  if (typeof window !== "undefined") {
+    const { default: Home } = await import("./home.js");
+    Home();
+  }
+})();
 
 function Home() {
   const context = useContext(cssContext);
@@ -17,13 +20,13 @@ function Home() {
         <div className="wrapper clearfix">
           <div className="clearfix" id="top">
             <h1 className="fl">
-              <a href="index.html">
+              <a href="/">
                 <img src="img/logo.png" />
               </a>
             </h1>
             <div className="fr clearfix" id="top1">
               <p className="fl">
-                <a href="login.html" id="login">
+                <a href="/login" id="login">
                   登录
                 </a>
                 <a href="#" id="reg">

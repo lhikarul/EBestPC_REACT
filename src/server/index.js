@@ -3,6 +3,7 @@ import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { renderToString } from "react-dom/server";
 import Home from "../components/Home";
+import Login from "../components/Login";
 import cssContext from "./cssContext";
 
 const app = express();
@@ -17,6 +18,7 @@ const render = (req) => {
       <StaticRouter location={req.path}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </StaticRouter>
     </cssContext.Provider>
@@ -38,7 +40,7 @@ const render = (req) => {
     `;
 };
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   const html = render(req);
   res.send(html);
 });
