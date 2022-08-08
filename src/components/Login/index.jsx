@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import "../../css/login.css";
 function Login() {
   return (
     <div className="login">
       <form action="#" method="post">
         <h1>
-          <a href="/">
+          <Link to={"/"}>
             <img src="img/temp/logo.png" />
-          </a>
+          </Link>
         </h1>
         <p></p>
         <div className="msg-warn hide">

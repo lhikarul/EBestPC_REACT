@@ -7,7 +7,7 @@ import Login from "../components/Login";
 import cssContext from "./cssContext";
 
 const app = express();
-app.use(express.static("dist"));
+app.use(express.static("public"));
 
 const render = (req) => {
   const staticContext = {
@@ -34,7 +34,7 @@ const render = (req) => {
         </head>
         <body>
             <div id="root">${content}</div>
-            <script src="/js/index.js"></script>
+            <script src="/index.js"></script>
         </body>
     </html>
     `;

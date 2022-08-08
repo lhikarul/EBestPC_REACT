@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import cssContext from "../../server/cssContext";
 import "../../css/index.css";
+import { Link, useNavigate } from "react-router-dom";
 
 (async () => {
   if (typeof window !== "undefined") {
@@ -26,9 +27,7 @@ function Home() {
             </h1>
             <div className="fr clearfix" id="top1">
               <p className="fl">
-                <a href="/login" id="login">
-                  登录
-                </a>
+                <Link to={"/login"}>登录</Link>
                 <a href="#" id="reg">
                   注册
                 </a>

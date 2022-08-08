@@ -7,7 +7,7 @@ module.exports = {
   entry: path.resolve(__dirname, "../src/server/index.js"),
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "../ssrbuild"),
+    path: path.resolve(__dirname, "../dist"),
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"],

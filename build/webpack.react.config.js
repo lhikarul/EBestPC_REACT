@@ -6,24 +6,24 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     index: "./src/index.jsx",
     // login: "./src/login.js",
   },
   output: {
-    filename: "js/[name].js",
-    path: path.resolve(__dirname, "../dist"),
+    filename: "index.js",
+    path: path.resolve(__dirname, "../public"),
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-      // directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 9000,
-    hot: true,
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, "dist"),
+  //     // directory: path.join(__dirname, "public"),
+  //   },
+  //   compress: true,
+  //   port: 9000,
+  //   hot: true,
+  // },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
   },
@@ -55,13 +55,12 @@ module.exports = {
   plugins: [
     // new HtmlWebpackPlugin({
     //   filename: "index.html",
-    //   // template: path.resolve(__dirname, "/public/index.html")
-    //   template: "./src/views/index.html",
+    //   template: path.resolve(__dirname, "../public"),
     //   chunks: ["index"],
     // }),
     // new HtmlWebpackPlugin({
     //   filename: "login.html",
-    //   template: "./src/views/login.html",
+    //   template: "./public/index.html",
     //   chunks: ["login"],
     // }),
     new webpack.ProvidePlugin({
@@ -72,7 +71,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "../src/img"),
-          to: path.resolve(__dirname, "../dist/img"),
+          to: path.resolve(__dirname, "../public/img"),
         },
       ],
     }),
