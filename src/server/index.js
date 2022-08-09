@@ -31,11 +31,11 @@ const render = (req) => {
         <head>
             <title>ssr</title>
             <style>${cssStr}</style>
-            <link rel="stylesheet" type="text/css" href="css/main.css"/>
+            <link rel="stylesheet" type="text/css" href="css/index.css"/>
         </head>
         <body>
             <div id="root">${content}</div>
-            <script src="/index.js"></script>
+            <script src="js/index.js"></script>
         </body>
     </html>
     `;

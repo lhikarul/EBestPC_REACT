@@ -5,15 +5,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CssMinizerPlugin = require("css-minimizer-webpack-plugin");
+
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    index: path.resolve(__dirname, "../src/index.js"),
+  },
   // entry: {
   //   index: "./src/index.js",
   //   // login: "./src/login.js",
   // },
+  // output: {
+  //   filename: "index.js",
+  //   path: path.resolve(__dirname, "../public"),
+  // },
   output: {
-    filename: "index.js",
+    filename: "js/[name].js",
     path: path.resolve(__dirname, "../public"),
   },
   // devServer: {
@@ -52,6 +61,13 @@ module.exports = {
         use: "babel-loader",
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new UglifyJsPlugin(), new CssMinizerPlugin()],
+    // splitChunks: {
+    //   chunks: "all",
+    // },
   },
   plugins: [
     // new HtmlWebpackPlugin({
