@@ -34,7 +34,9 @@ const render = (req) => {
             <link rel="stylesheet" type="text/css" href="css/index.css"/>
         </head>
         <body>
-            <div id="root">${content}</div>
+            <div id="root"></div>
+            <script src="js/jquery.dll.js"></script>
+            <script src="js/react.dll.js"></script>
             <script src="js/index.js"></script>
         </body>
     </html>

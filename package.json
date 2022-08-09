@@ -12,7 +12,8 @@
     "build": "webpack --config build/webpack.config.js",
     "build:react": "webpack --config build/webpack.react.config.js",
     "build:react:mpa": "webpack --config build/webpack.react.mpa.config.js",
-    "build:server": "webpack --config build/webpack.server.config.js"
+    "build:server": "webpack --config build/webpack.server.config.js",
+    "dll": "webpack --config build/webpack.dll.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,12 +30,13 @@
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "isomorphic-style-loader": "^5.3.2",
+    " ": "^5.3.2",
     "mini-css-extract-plugin": "^2.6.1",
     "nodemon": "^2.0.19",
     "style-loader": "^3.3.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-node-externals": "^3.0.0"

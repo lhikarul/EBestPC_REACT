@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CssMinizerPlugin = require("css-minimizer-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   mode: "development",
@@ -14,8 +15,8 @@ module.exports = {
     index: path.resolve(__dirname, "../src/index.js"),
   },
   // entry: {
-  //   index: "./src/index.js",
-  //   // login: "./src/login.js",
+  //   index: "../src/index.js",
+  //   // login: "../src/login.js",
   // },
   // output: {
   //   filename: "index.js",
@@ -25,15 +26,14 @@ module.exports = {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../public"),
   },
-  // devServer: {
-  //   static: {
-  //     directory: path.join(__dirname, "dist"),
-  //     // directory: path.join(__dirname, "public"),
-  //   },
-  //   compress: true,
-  //   port: 9000,
-  //   hot: true,
-  // },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
+    hot: true,
+  },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
   },
@@ -77,9 +77,18 @@ module.exports = {
     // }),
     // new HtmlWebpackPlugin({
     //   filename: "login.html",
-    //   template: "./public/index.html",
+    //   template: "../public/index.html",
     //   chunks: ["login"],
     // }),
+    // new BundleAnalyzerPlugin(),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: path.resolve(__dirname, "../dll/react-manifest.json"),
+    }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: path.resolve(__dirname, "../dll/jquery-manifest.json"),
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
@@ -89,6 +98,14 @@ module.exports = {
         {
           from: path.resolve(__dirname, "../src/img"),
           to: path.resolve(__dirname, "../public/img"),
+        },
+        {
+          from: path.resolve(__dirname, "../dll/jquery.dll.js"),
+          to: path.resolve(__dirname, "../public/js/jquery.dll.js"),
+        },
+        {
+          from: path.resolve(__dirname, "../dll/react.dll.js"),
+          to: path.resolve(__dirname, "../public/js/react.dll.js"),
         },
       ],
     }),
