@@ -15,10 +15,6 @@ function Home() {
   if (typeof window === "undefined") {
     // context.css.push(styles._getCss());
   }
-  console.log("home");
-  useEffect(() => {
-    console.log("useEffect");
-  }, []);
   return (
     <div>
       <div className="head">
