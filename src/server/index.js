@@ -31,6 +31,7 @@ const render = (req) => {
         <head>
             <title>ssr</title>
             <style>${cssStr}</style>
+            <link rel="stylesheet" type="text/css" href="css/main.css"/>
         </head>
         <body>
             <div id="root">${content}</div>
