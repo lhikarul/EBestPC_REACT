@@ -6,11 +6,12 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: "production",
-  entry: {
-    index: "./src/index.jsx",
-    // login: "./src/login.js",
-  },
+  mode: "development",
+  entry: "./src/index.js",
+  // entry: {
+  //   index: "./src/index.js",
+  //   // login: "./src/login.js",
+  // },
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "../public"),

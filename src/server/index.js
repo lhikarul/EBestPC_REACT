@@ -33,7 +33,7 @@ const render = (req) => {
             <style>${cssStr}</style>
         </head>
         <body>
-            <div id="root">${content}</div>
+            <div id="root"></div>
             <script src="/index.js"></script>
         </body>
     </html>

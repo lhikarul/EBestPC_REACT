@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/login.css";
 function Login() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    console.log("wtf");
+    navigate("/");
+  };
   return (
     <div className="login">
       <form action="#" method="post">
         <h1>
-          <Link to={"/"}>
+          <span onClick={handleClick}>
             <img src="img/temp/logo.png" />
-          </Link>
+          </span>
         </h1>
         <p></p>
         <div className="msg-warn hide">
